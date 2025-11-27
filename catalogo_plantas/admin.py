@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Planta, UsoMedicinal, Regiao
+from .models import Planta, UsoMedicinal, Regiao, FonteCientifica
+
 
 class PlantaAdmin(admin.ModelAdmin):
     list_display = ('nome_cientifico', 'nome_popular', 'imagem_preview')
@@ -17,3 +18,8 @@ admin.site.register(Planta, PlantaAdmin)
 admin.site.register(UsoMedicinal)
 admin.site.register(Regiao)
 
+@admin.register(FonteCientifica)
+class FonteCientificaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'ano', 'fonte', 'planta')
+    search_fields = ('titulo', 'autores', 'fonte')
+    list_filter = ('ano', 'fonte')

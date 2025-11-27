@@ -36,3 +36,22 @@ class Regiao(models.Model):
 
     def __str__(self):
         return self.nome
+
+    
+class FonteCientifica(models.Model):
+    planta = models.ForeignKey(
+        Planta,
+        on_delete=models.CASCADE,
+        related_name='fontes_cientificas'
+    )
+
+    titulo = models.CharField(max_length=255)
+    autores = models.CharField(max_length=255)
+    ano = models.PositiveIntegerField()
+    fonte = models.CharField(max_length=255)
+    link = models.URLField(blank=True, null=True)
+    observacoes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.titulo} ({self.ano})"
+

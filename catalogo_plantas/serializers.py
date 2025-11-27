@@ -21,3 +21,19 @@ class PlantaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Planta
         fields = '__all__'
+
+
+class FonteCientificaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FonteCientifica
+        fields = [
+            'id',
+            'titulo',
+            'autores',
+            'ano',
+            'fonte',
+            'link',
+            'observacoes',
+            'planta'
+        ]
+        
