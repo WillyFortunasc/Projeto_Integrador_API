@@ -180,7 +180,8 @@ poetry remove requests
 
 
 ## Projeto Integrador: Catálogo de Plantas Medicinais do Cerrado 
-![Green Leaves With Water Droplets Herbal Medicine Mortar And Pestle Circular Logo Design PNG Images _ PNG Free Download - Pikbest](https://github.com/user-attachments/assets/00ab7e94-2b9e-42ad-8a14-5bc22be2c0e2)
+![download](https://github.com/user-attachments/assets/4a26083f-f9c7-418a-a035-837305778745)
+
 
 Este projeto é uma extensão do repositório original do professor, adicionando um novo app `catalogo_plantas` para gerenciar informações sobre plantas medicinais, usos, e regiões do cerrado.
 
