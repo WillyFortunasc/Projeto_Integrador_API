@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Planta, UsoMedicinal, Regiao
+from .models import Planta, UsoMedicinal, Regiao, FonteCientifica
 
 
 class UsoMedicinalSerializer(serializers.ModelSerializer):
