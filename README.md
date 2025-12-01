@@ -206,5 +206,5 @@ Este projeto é uma extensão do repositório original do professor, adicionando
 - Listagem de Plantas: [http://127.0.0.1:8000/api/catalogo/plantas/](http://127.0.0.1:8000/api/catalogo/plantas/)
 - Listagem de Usos Medicinais: [http://127.0.0.1:8000/api/catalogo/usos/](http://127.0.0.1:8000/api/catalogo/usos/)
 - Listagem de Regiões: [http://127.0.0.1:8000/api/catalogo/regioes/](http://127.0.0.1:8000/api/catalogo/regioes/)
-- Fontes Científicas: [http://127.0.0.1:8000/api/catalogo/fontes-cientificas/]
+- Fontes Científicas: http://127.0.0.1:8000/api/catalogo/fontes-cientificas/
 - Django Admin: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
