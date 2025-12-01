@@ -16,6 +16,7 @@ from .serializers import (
 class PlantaViewSet(viewsets.ModelViewSet):
     queryset = Planta.objects.all()
     serializer_class = PlantaSerializer
+    
     filterset_fields = [
         'nome_cientifico',
         'nome_popular',
@@ -28,7 +29,15 @@ class PlantaViewSet(viewsets.ModelViewSet):
     'nome_popular',
     'data_registro'
 ]
+    
+    search_fields = [
+    'nome_cientifico',
+    'nome_popular',
+    'descricao',
+    'regioes__tipo_bioma',
+]
 
+      
     @action(detail=True, methods=['get'], url_path='dashboard')
     def dashboard(self, request, pk=None):
         planta = self.get_object()
@@ -84,6 +93,11 @@ class UsoMedicinalViewSet(viewsets.ModelViewSet):
     serializer_class = UsoMedicinalSerializer
     filterset_fields = ['parte_utilizada', 'indicacao']
     ordering_fields = ['parte_utilizada']
+    search_fields = [
+    'parte_utilizada',
+    'indicacao',
+    'modo_preparo',
+]
 
 
 # REGIÃO
@@ -93,6 +107,11 @@ class RegiaoViewSet(viewsets.ModelViewSet):
     serializer_class = RegiaoSerializer
     filterset_fields = ['nome', 'tipo_bioma']
     ordering_fields = ['nome', 'tipo_bioma']
+    search_fields = [
+    'nome',
+    'tipo_bioma',
+    'descricao'
+]
 
 
 # FONTE CIENTÍFICA
@@ -102,6 +121,13 @@ class FonteCientificaViewSet(viewsets.ModelViewSet):
     serializer_class = FonteCientificaSerializer
     filterset_fields = ['ano', 'fonte']
     ordering_fields = ['ano', 'titulo']
+    search_fields = [
+    'titulo',
+    'autores',
+    'fonte',
+    'observacoes'
+]
+
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
