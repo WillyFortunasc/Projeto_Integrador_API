@@ -211,7 +211,7 @@ Este projeto é uma extensão do repositório original do professor, adicionando
 - Dashboard: http://127.0.0.1:8000/api/catalogo/plantas/id/dashboard/
 
 
-# Filtros e Ordenação da API — Catálogo de Plantas Medicinais
+# FILTROS E ORDENAÇÃO DA API - CATÁLOGO DE PLANTAS MEDICINAIS 
 
 # 1. PLANTAS 🌱
 
@@ -253,22 +253,21 @@ Este projeto é uma extensão do repositório original do professor, adicionando
 - Filtrar por ano	ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ano=2020
 - Filtrar por fonte	fonte	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?fonte=Reflora
 
-# ↕ Ordenação
+# ↕ ORDENAÇÃO
 
 - Ordenar por ano	ordering=ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=ano
 - Ordenar por ano (do mais recente para o mais antigo)	ordering=-ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=-ano
 - Ordenar por título	ordering=titulo	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=titulo
 
-# 5. Dashboard Geral📊
+# 5. DASHBOARD GERAL 📊
 
 http://127.0.0.1:8000/api/catalogo/dashboard-geral/
 
-Mostra:
 
-Totais
+- Totais
 
-Resumo
+- Resumo
 
-Plantas recentes
+- Plantas recentes
 
-Estatísticas gerais
+- Estatísticas gerais
