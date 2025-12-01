@@ -208,3 +208,4 @@ Este projeto é uma extensão do repositório original do professor, adicionando
 - Listagem de Regiões: [http://127.0.0.1:8000/api/catalogo/regioes/](http://127.0.0.1:8000/api/catalogo/regioes/)
 - Fontes Científicas: http://127.0.0.1:8000/api/catalogo/fontes-cientificas/
 - Django Admin: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+- Dashboard: http://127.0.0.1:8000/api/catalogo/plantas/id/dashboard/
