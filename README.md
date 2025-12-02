@@ -53,27 +53,37 @@ cd Projeto_Integrador_API
 
 2. Instalar dependências com Poetry
 
-``` poetry install 
+``` python
+poetry install 
+
 ```
 
 3. Ativar o ambiente virtual
 
-``` poetry shell  
+``` python
+poetry shell
+
 ```
 
 4. Aplicar migrações
 
-``` poetry run python manage.py migrate 
+``` python
+poetry run python manage.py migrate 
+
 ```
 
 5. Criar superusuário (opcional, mas recomendado)
 
-``` poetry run python manage.py createsuperuser 
+``` python
+poetry run python manage.py createsuperuser 
+
 ```
 
 6. Rodar servidor
 
-``` poetry run python manage.py runserver 
+``` python
+poetry run python manage.py runserver 
+
 ```
 
 7. A API estará disponível em:
