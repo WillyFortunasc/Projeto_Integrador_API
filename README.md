@@ -75,9 +75,9 @@ cd Projeto_Integrador_API
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
-## Planta 🌿
+### Planta 🌿
 
-### Campos:
+#### Campos:
 
 • nome_cientifico
 
