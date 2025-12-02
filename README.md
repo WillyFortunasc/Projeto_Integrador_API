@@ -77,7 +77,7 @@ cd Projeto_Integrador_API
 
 ### Planta 🌿
 
-➔ Campos:
+### ➔ Campos:
 
 • nome_cientifico
 
@@ -91,7 +91,7 @@ cd Projeto_Integrador_API
 
 • data_registro
 
-➔ Relações:
+### ➔ Relações:
 
 • Many-to-Many com Região
 
