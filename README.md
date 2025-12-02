@@ -99,9 +99,9 @@ cd Projeto_Integrador_API
 
 • One-to-Many com FonteCientifica
 
-💊 UsoMedicinal
+### UsoMedicinal 💊 
 
-Campos:
+### ➔ Campos:
 
 • planta (FK)
 
@@ -111,9 +111,9 @@ Campos:
 
 • indicacao
 
-🗺 Regiao
+### Regiao 🗺
 
-Campos:
+### ➔ Campos:
 
 • nome
 
@@ -123,9 +123,9 @@ Campos:
 
 • plantas (Many-to-Many)
 
-📚 FonteCientifica
+### FonteCientifica 📚 
 
-Campos:
+### ➔ Campos:
 
 • planta (FK)
 
