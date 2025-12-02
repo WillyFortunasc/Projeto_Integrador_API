@@ -178,7 +178,7 @@ poetry run python manage.py runserver
 
 • Usos Medicinais 💊
 
-``` http://127.0.0.1:8000/api/catalogo/usos/ ``` 
+``` http://127.0.0.1:8000/api/catalogo/usos-medicinais/ ``` 
 
 • Regiões e Biomas 🗺
 
