@@ -69,7 +69,7 @@ cd Projeto_Integrador_API
 
 ``` poetry run python manage.py runserver ```
 
-A API estará disponível em:
+7. A API estará disponível em:
 
 👉 ``` http://127.0.0.1:8000/api/catalogo/  ```
 
