@@ -77,8 +77,6 @@ cd Projeto_Integrador_API
 
 ### Planta 🌿
 
-### ➔ Campos:
-
 • nome_cientifico
 
 • nome_popular
@@ -101,7 +99,6 @@ cd Projeto_Integrador_API
 
 ### UsoMedicinal 💊 
 
-### ➔ Campos:
 
 • planta (FK)
 
@@ -113,7 +110,6 @@ cd Projeto_Integrador_API
 
 ### Regiao 🗺
 
-### ➔ Campos:
 
 • nome
 
@@ -125,7 +121,6 @@ cd Projeto_Integrador_API
 
 ### FonteCientifica 📚 
 
-### ➔ Campos:
 
 • planta (FK)
 
@@ -143,11 +138,11 @@ cd Projeto_Integrador_API
 
 # Endpoints Principais 🔌
 
-Base URL:
+• Base URL:
 
-http://127.0.0.1:8000/api/catalogo/
+``` http://127.0.0.1:8000/api/catalogo/ ```
 
-- Plantas 🌿
+• Plantas 🌿
 
 Método	Endpoint	Descrição
 
@@ -158,17 +153,18 @@ PUT/PATCH	/plantas/{id}/	Atualizar
 DELETE	/plantas/{id}/	Remover
 GET	/plantas/{id}/dashboard/	Painel completo com usos, regiões e fontes
 
-- Usos Medicinais 💊
+• Usos Medicinais 💊
 
-/usos/
+``` http://127.0.0.1:8000/usos/ ``` 
 
-- Regiões e Biomas 🗺
+• Regiões e Biomas 🗺
 
-/regioes/
+``` http://127.0.0.1:8000/regioes/ ``` 
 
-- Fontes Científicas 📚
+• Fontes Científicas 📚
 
-/fontes-cientificas/
+``` http://127.0.0.1:8000/fontes-cientificas/ ``` 
+
 
 # Sistema de Filtros 🔍 
 
@@ -176,39 +172,39 @@ GET	/plantas/{id}/dashboard/	Painel completo com usos, regiões e fontes
 
 • Por nome científico:
 
-/plantas/?nome_cientifico=Hancornia speciosa
+``` http://127.0.0.1:8000/plantas/?nome_cientifico=Hancornia speciosa ``` 
 
 • Por nome popular:
 
-/plantas/?nome_popular=Mangaba
+``` http://127.0.0.1:8000/plantas/?nome_popular=Mangaba ``` 
 
 • Por risco de extinção:
 
-/plantas/?risco_extincao=True
+``` http://127.0.0.1:8000/plantas/?risco_extincao=True ``` 
 
 • Por bioma:
 
-/plantas/?regioes__tipo_bioma=Cerrado
+``` http://127.0.0.1:8000/plantas/?regioes__tipo_bioma=Cerrado ``` 
 
 # Ordenação (ordering) 📌
 
 • Ordenar por nome científico:
 
-/plantas/?ordering=nome_cientifico
+``` http://127.0.0.1:8000/plantas/?ordering=nome_cientifico ``` 
 
 • Ordenar por nome popular:
 
-/plantas/?ordering=nome_popular
+``` http://127.0.0.1:8000/plantas/?ordering=nome_popular ``` 
 
 • Ordenar por data de registro (mais recentes primeiro):
 
-/plantas/?ordering=-data_registro
+``` http://127.0.0.1:8000/plantas/?ordering=-data_registro ``` 
 
 # Busca (SearchFilter) 🔎
 
 Busca textual em plantas:
 
-/plantas/?search=manga
+``` http://127.0.0.1:8000/plantas/?search=manga ``` 
 
 
 Campos incluídos na busca:
@@ -225,7 +221,7 @@ Mostra tudo de uma planta, já organizado.
 
 Exemplo:
 
-/plantas/1/dashboard/
+``` http://127.0.0.1:8000/plantas/1/dashboard/ ``` 
 
 
 Retorna:
@@ -246,22 +242,21 @@ Disponível graças ao drf-spectacular:
 
 Swagger UI
 
-👉 http://127.0.0.1:8000/api/docs/swagger/
+``` http://127.0.0.1:8000/api/docs/swagger/ ``` 
 
 Redoc
 
-👉 http://127.0.0.1:8000/api/docs/redoc/
+``` http://127.0.0.1:8000/api/docs/redoc/ ``` 
 
 Schema JSON
 
-👉 http://127.0.0.1:8000/api/schema/
+``` http://127.0.0.1:8000/api/schema/ ``` 
 
 # Upload de Imagens 🖼
 
 Faça upload via POST no endpoint de plantas:
 
 Content-Type: multipart/form-data
-
 
 Exemplo de campo:
 
@@ -270,12 +265,12 @@ imagem: arquivo.jpg
 
 As imagens são armazenadas em:
 
-/media/plantas/
+``` http://127.0.0.1:8000/media/plantas/ ``` 
 
 # Acesso ao Admin 🧪
 
 
-👉 http://127.0.0.1:8000/admin/
+``` http://127.0.0.1:8000/admin/ ```
 
 # Objetivo do Projeto 🎯
 
