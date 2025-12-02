@@ -45,34 +45,33 @@ A API oferece:
 
 git clone https://github.com/WillyFortunasc/Projeto_Integrador_API.git
 
-cd Projeto_Integrador_API
+cd Projeto_Integrador_API 
 
 ```
 
 2. Instalar dependências com Poetry
 
-poetry install
+``` poetry install ```
 
 3. Ativar o ambiente virtual
 
-poetry shell
+``` poetry shell  ```
 
 4. Aplicar migrações
 
-poetry run python manage.py migrate
+``` poetry run python manage.py migrate ```
 
 5. Criar superusuário (opcional, mas recomendado)
 
-poetry run python manage.py createsuperuser
+``` poetry run python manage.py createsuperuser ```
 
 6. Rodar servidor
 
-poetry run python manage.py runserver
-
+``` poetry run python manage.py runserver ```
 
 A API estará disponível em:
 
-👉 http://127.0.0.1:8000/api/catalogo/
+👉 ``` http://127.0.0.1:8000/api/catalogo/  ```
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
