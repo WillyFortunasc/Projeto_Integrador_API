@@ -77,7 +77,7 @@ cd Projeto_Integrador_API
 
 ### Planta 🌿
 
-#### Campos:
+- Campos:
 
 • nome_cientifico
 
