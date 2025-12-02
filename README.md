@@ -195,7 +195,7 @@ poetry run python manage.py runserver
 
 • Por nome científico:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa Gomes ``` 
 
 • Por nome popular:
 
