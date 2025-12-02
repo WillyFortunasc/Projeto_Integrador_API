@@ -5,7 +5,7 @@
 API desenvolvida para catalogar espécies vegetais medicinais, seus usos tradicionais, regiões de ocorrência e referências científicas.
 Este projeto foi criado como Projeto Integrador, baseado na estrutura do professor, porém totalmente remodelado para o tema Plantas Medicinais do Cerrado e Outros Biomas Brasileiros.
 
-A API oferece:
+"A API oferece:"
 
 • Cadastro de plantas, incluindo imagem
 
@@ -53,27 +53,35 @@ cd Projeto_Integrador_API
 
 2. Instalar dependências com Poetry
 
-``` poetry install ```
+``` poetry install 
+```
 
 3. Ativar o ambiente virtual
 
-``` poetry shell  ```
+``` poetry shell  
+```
 
 4. Aplicar migrações
 
-``` poetry run python manage.py migrate ```
+``` poetry run python manage.py migrate 
+```
 
 5. Criar superusuário (opcional, mas recomendado)
 
-``` poetry run python manage.py createsuperuser ```
+``` poetry run python manage.py createsuperuser 
+```
 
 6. Rodar servidor
 
-``` poetry run python manage.py runserver ```
+``` poetry run python manage.py runserver 
+```
 
 7. A API estará disponível em:
 
-``` http://127.0.0.1:8000/api/catalogo/  ```
+``` python
+http://127.0.0.1:8000/api/catalogo/  
+
+```
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
@@ -146,26 +154,30 @@ cd Projeto_Integrador_API
 
 • Plantas 🌿
 
-Método	Endpoint	Descrição
+| Método    | Endpoint                 | Descrição                                  |
+| --------- | ------------------------ | ------------------------------------------ |
+| GET       | /plantas/                | Lista todas as plantas                     |
+| POST      | /plantas/                | Cadastra planta                            |
+| GET       | /plantas/{id}/           | Detalhe                                    |
+| PUT/PATCH | /plantas/{id}/           | Atualizar                                  |
+| DELETE    | /plantas/{id}/           | Remover                                    |
+| GET       | /plantas/{id}/dashboard/ | Painel completo com usos, regiões e fontes |
 
-GET	/plantas/	Lista todas as plantas
-POST	/plantas/	Cadastra planta
-GET	/plantas/{id}/	Detalhe
-PUT/PATCH	/plantas/{id}/	Atualizar
-DELETE	/plantas/{id}/	Remover
-GET	/plantas/{id}/dashboard/	Painel completo com usos, regiões e fontes
 
 • Usos Medicinais 💊
 
-``` http://127.0.0.1:8000/usos/ ``` 
+``` http://127.0.0.1:8000/api/catalogo/usos/ 
+``` 
 
 • Regiões e Biomas 🗺
 
-``` http://127.0.0.1:8000/regioes/ ``` 
+``` http://127.0.0.1:8000/api/catalogo/regioes/ 
+``` 
 
 • Fontes Científicas 📚
 
-``` http://127.0.0.1:8000/fontes-cientificas/ ``` 
+``` http://127.0.0.1:8000/api/catalogo/fontes-cientificas/ 
+``` 
 
 
 # Sistema de Filtros 🔍 
@@ -174,39 +186,48 @@ GET	/plantas/{id}/dashboard/	Painel completo com usos, regiões e fontes
 
 • Por nome científico:
 
-``` http://127.0.0.1:8000/plantas/?nome_cientifico=Hancornia speciosa ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa
+ ``` 
 
 • Por nome popular:
 
-``` http://127.0.0.1:8000/plantas/?nome_popular=Mangaba ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_popular=Mangaba 
+``` 
 
 • Por risco de extinção:
 
-``` http://127.0.0.1:8000/plantas/?risco_extincao=True ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?risco_extincao=True 
+``` 
 
 • Por bioma:
 
-``` http://127.0.0.1:8000/plantas/?regioes__tipo_bioma=Cerrado ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado
+ ``` 
+
 
 # Ordenação (ordering) 📌
 
 • Ordenar por nome científico:
 
-``` http://127.0.0.1:8000/plantas/?ordering=nome_cientifico ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_cientifico
+ ``` 
 
 • Ordenar por nome popular:
 
-``` http://127.0.0.1:8000/plantas/?ordering=nome_popular ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_popular
+ ``` 
 
 • Ordenar por data de registro (mais recentes primeiro):
 
-``` http://127.0.0.1:8000/plantas/?ordering=-data_registro ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro 
+``` 
 
 # Busca (SearchFilter) 🔎
 
 Busca textual em plantas:
 
-``` http://127.0.0.1:8000/plantas/?search=manga ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?search=mangaba
+ ``` 
 
 
 Campos incluídos na busca:
@@ -223,7 +244,8 @@ Mostra tudo de uma planta, já organizado.
 
 Exemplo:
 
-``` http://127.0.0.1:8000/plantas/1/dashboard/ ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/1/dashboard/
+ ``` 
 
 
 Retorna:
@@ -244,35 +266,44 @@ Disponível graças ao drf-spectacular:
 
 Swagger UI
 
-``` http://127.0.0.1:8000/api/docs/swagger/ ``` 
+``` http://127.0.0.1:8000/api/docs/swagger/
+``` 
 
 Redoc
 
-``` http://127.0.0.1:8000/api/docs/redoc/ ``` 
+``` http://127.0.0.1:8000/api/docs/redoc/
+ ``` 
 
 Schema JSON
 
-``` http://127.0.0.1:8000/api/schema/ ``` 
+``` http://127.0.0.1:8000/api/schema/
+ ``` 
 
 # Upload de Imagens 🖼
 
 Faça upload via POST no endpoint de plantas:
 
-Content-Type: multipart/form-data
+``` Content-Type: multipart/form-data 
+```
 
 Exemplo de campo:
 
+``` python
 imagem: arquivo.jpg
+```
 
 
 As imagens são armazenadas em:
 
-``` http://127.0.0.1:8000/media/plantas/ ``` 
+``` python
+http://127.0.0.1:8000/media/plantas/ 
+``` 
 
 # Acesso ao Admin 🧪
 
 
-``` http://127.0.0.1:8000/admin/ ```
+``` http://127.0.0.1:8000/admin/ 
+```
 
 # Objetivo do Projeto 🎯
 
