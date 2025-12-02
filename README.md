@@ -1,4 +1,4 @@
-🌿 Catálogo de Plantas Medicinais — API REST (Django + DRF)
+# Catálogo de Plantas Medicinais — API REST (Django + DRF)
 
 API desenvolvida para catalogar espécies vegetais medicinais, seus usos tradicionais, regiões de ocorrência e referências científicas.
 Este projeto foi criado como Projeto Integrador, baseado na estrutura do professor, porém totalmente remodelado para o tema Plantas Medicinais do Cerrado e Outros Biomas Brasileiros.
@@ -15,9 +15,9 @@ A API oferece:
 
 • Sistema de filtros, buscas e ordenação
 
-Documentação automática (Swagger + Redoc)
+• Documentação automática (Swagger + Redoc)
 
-Endpoint especial dashboard com visão completa da planta
+• Endpoint especial dashboard com visão completa da planta
 
 📦 Tecnologias Utilizadas
 
