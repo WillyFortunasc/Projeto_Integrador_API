@@ -18,6 +18,8 @@ class PlantaAdmin(admin.ModelAdmin):
         'nome_cientifico',
         'risco_extincao',
         'data_registro',
+        'lista_regioes',
+        'total_fontes',
         'imagem_preview',
     )
 
@@ -53,6 +55,14 @@ class PlantaAdmin(admin.ModelAdmin):
             'fields': ('data_registro',),
         }),
     )
+
+    def lista_regioes(self, obj):
+        return ", ".join([r.nome for r in obj.regioes.all()])
+    lista_regioes.short_description = "Regiões"
+
+    def total_fontes(self, obj):
+        return obj.fontes_cientificas.count()
+    total_fontes.short_description = "Qtd. Fontes"
 
     def imagem_preview(self, obj):
         if obj.imagem:
