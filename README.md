@@ -41,9 +41,13 @@ A API oferece:
 
 1. Clonar o repositório: 
 
-'''git clone https://github.com/WillyFortunasc/Projeto_Integrador_API.git
+``` python
 
-cd Projeto_Integrador_API'''
+git clone https://github.com/WillyFortunasc/Projeto_Integrador_API.git
+
+cd Projeto_Integrador_API
+
+```
 
 2. Instalar dependências com Poetry
 
