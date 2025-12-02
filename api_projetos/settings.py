@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',        # DRF
     'api',    # nosso app
     'catalogo_plantas',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,14 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
         'rest_framework.filters.SearchFilter',
     ],
+    
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Catálogo de Plantas Medicinais do Cerrado',
+    'DESCRIPTION': 'API desenvolvida como projeto integrador, contendo plantas, usos medicinais, regiões e fontes científicas.',
+    'VERSION': '1.0.0',
 }
 
 TEMPLATES = [

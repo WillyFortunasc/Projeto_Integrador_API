@@ -1,280 +1,272 @@
-# API Projetos
+🌿 Catálogo de Plantas Medicinais — API REST (Django + DRF)
 
-> Projeto Django + Django REST Framework para gerenciamento de projetos.
+API desenvolvida para catalogar espécies vegetais medicinais, seus usos tradicionais, regiões de ocorrência e referências científicas.
+Este projeto foi criado como Projeto Integrador, baseado na estrutura do professor, porém totalmente remodelado para o tema Plantas Medicinais do Cerrado e Outros Biomas Brasileiros.
 
-[![Django](https://img.shields.io/badge/Django-5.2.8-092E20?style=flat-square&logo=django)](https://www.djangoproject.com/)
-[![DRF](https://img.shields.io/badge/Django%20REST%20Framework-3.16.1-A30000?style=flat-square&logo=django)](https://www.django-rest-framework.org/)
-[![Swagger/OpenAPI](https://img.shields.io/badge/Swagger%2FOpenAPI-Enabled-85EA2D?style=flat-square&logo=swagger)](https://swagger.io/)
-[![Poetry](https://img.shields.io/badge/Poetry-Latest-60A5FA?style=flat-square&logo=poetry)](https://python-poetry.org/)
+A API oferece:
 
----
+Cadastro de plantas, incluindo imagem
 
-## Visão Geral
+Cadastro de usos medicinais
 
-Este repositório contém uma API construída com Django (>=5.2.8) e
-Django REST Framework para gerenciar projetos. A API já inclui
-integração com `drf-yasg` para documentação (Swagger / ReDoc) e usa
-SQLite por padrão para facilitar o desenvolvimento.
+Cadastro de regiões e biomas onde ocorrem
 
-As dependências principais (definidas em `pyproject.toml`) são:
+Cadastro de fontes científicas (artigos, livros, instituições etc.)
 
-- `django (>=5.2.8,<6.0.0)`
-- `djangorestframework (>=3.16.1,<4.0.0)`
-- `drf-yasg (>=1.21.11,<2.0.0)`
+Sistema de filtros, buscas e ordenação
 
-## Pré-requisitos
+Documentação automática (Swagger + Redoc)
 
-- Python 3.12 ou superior
-- Git (para clonar o repositório)
-- **Poetry** (gerenciador de dependências)
+Endpoint especial dashboard com visão completa da planta
 
-### Instalar Poetry
+📦 Tecnologias Utilizadas
 
-Se ainda não tem Poetry instalado, siga a [documentação oficial](https://python-poetry.org/docs/#installation):
+Python 3.12+
 
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-```
+Django 5.2.8
 
-Após instalação, adicione o Poetry ao `PATH`:
+Django REST Framework 3.16
 
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
+Poetry (gerenciador de pacotes)
 
-Verifique a instalação:
+SQLite (padrão para desenvolvimento)
 
-```bash
-poetry --version
-```
+Pillow (upload de imagens)
 
-## Instalação com Poetry
+drf-spectacular (API Schema / Swagger)
 
-1. Clone o projeto
+django-filter (filtros avançados)
 
-```bash
-git clone <URL_DO_REPOSITORIO>
-cd api_projetos
-```
+🚀 Instalação e Execução
+1. Clonar o repositório
+git clone https://github.com/WillyFortunasc/Projeto_Integrador_API.git
+cd Projeto_Integrador_API
 
-2. Instalar dependências e criar ambiente virtual
-
-Poetry cria automaticamente um virtualenv e instala todas as dependências:
-
-```bash
+2. Instalar dependências com Poetry
 poetry install
-```
 
-3. Ativar o ambiente virtual (opcional)
-
-O Poetry gerencia o virtualenv automaticamente. Para executar comandos dentro do ambiente:
-
-```bash
-poetry run <comando>
-```
-
-Ou, para entrar em um shell interativo:
-
-```bash
+3. Ativar o ambiente virtual
 poetry shell
-```
 
-Dentro do shell, você pode rodar comandos normalmente sem o prefixo `poetry run`.
-
-## Configuração do banco de dados
-
-O projeto já vem configurado para usar SQLite (arquivo `db.sqlite3` na raiz).
-Para preparar o banco:
-
-```bash
+4. Aplicar migrações
 poetry run python manage.py migrate
-```
 
-Opcionalmente, criar um usuário administrador:
-
-```bash
+5. Criar superusuário (opcional, mas recomendado)
 poetry run python manage.py createsuperuser
-```
 
-Se desejar usar outro banco (Postgres, MySQL, etc.), edite `api_projetos/settings.py`
-na seção `DATABASES` e instale o driver apropriado através do Poetry ou manualmente.
-
-## Rodando o servidor
-
-```bash
+6. Rodar servidor
 poetry run python manage.py runserver
-```
 
-A API ficará disponível em `http://127.0.0.1:8000/` e os endpoints do app `api`
-estão sob `http://127.0.0.1:8000/api/`.
 
-### Documentação (Swagger / ReDoc)
+A API estará disponível em:
+👉 http://127.0.0.1:8000/api/catalogo/
 
-- Swagger UI: `http://127.0.0.1:8000/swagger/`
-- ReDoc: `http://127.0.0.1:8000/redoc/`
+🗂 Estrutura do Banco de Dados (Modelos)
+🌿 Planta
 
-Esses endpoints são servidos via `drf-yasg` e expõem a especificação da API.
+Campos:
 
-## Endpoints importantes
+nome_cientifico
 
-- `GET /api/projetos/` — listar projetos
-- `GET /api/projetos/{id}/` — detalhes de um projeto
-- Outros endpoints registrados pelo `DefaultRouter` do DRF no `api/urls.py`.
+nome_popular
 
-Para ver todos os endpoints e testar via UI, abra `/swagger/` após iniciar o servidor.
+descricao
 
+imagem
 
-## Dicas e troubleshooting
+risco_extincao
 
-### Poetry não encontrado?
+data_registro
 
-Se `poetry` não está no seu `PATH`, reinstale e configure corretamente:
+Relações:
 
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-export PATH="$HOME/.local/bin:$PATH"
-```
+Many-to-Many com Região
 
-### Problemas ao rodar `poetry install`?
+One-to-Many com UsoMedicinal
 
-Verifique se a versão do Python está correta (>= 3.12):
+One-to-Many com FonteCientifica
 
-```bash
-python --version
-```
+💊 UsoMedicinal
 
-Se precisar usar uma versão específica, configure no `pyproject.toml` ou use:
+Campos:
 
-```bash
-poetry env use python3.12
-```
+planta (FK)
 
-### Limpar cache do Poetry
+parte_utilizada
 
-Se enfrentar problemas de dependência, tente:
+modo_preparo
 
-```bash
-poetry cache clear . --all
-poetry install
-```
+indicacao
 
-### Adicionar novas dependências
+🗺 Regiao
 
-Para adicionar uma dependência (ex: `requests`):
+Campos:
 
-```bash
-poetry add requests
-```
+nome
 
-Para remover:
+descricao
 
-```bash
-poetry remove requests
-```
+tipo_bioma
 
-## Como contribuir
+plantas (Many-to-Many)
 
-- Abra uma issue descrevendo o bug ou feature desejada.
-- Faça um fork, crie uma branch com o prefixo `feature/` ou `fix/`, implemente e
-  envie um pull request apontando para a branch `main` do repositório original.
+📚 FonteCientifica
 
+Campos:
 
-## Projeto Integrador: Catálogo de Plantas Medicinais do Cerrado 
-![download](https://github.com/user-attachments/assets/4a26083f-f9c7-418a-a035-837305778745)
+planta (FK)
 
+titulo
 
-Este projeto é uma extensão do repositório original do professor, adicionando um novo app `catalogo_plantas` para gerenciar informações sobre plantas medicinais, usos, e regiões do cerrado.
+autores
 
-### Novos Endpoints:
+ano
 
-- `/api/catalogo/plantas/`
-- `/api/catalogo/usos/`
-- `/api/catalogo/regioes/`
+fonte
 
-### Como usar:
+link
 
-1. Criar plantas com imagem, nome científico e popular, risco de extinção, etc.  
-2. Cadastrar usos medicinais relacionados às plantas.  
-3. Associar plantas às regiões do cerrado.
+observacoes
 
----
+🔌 Endpoints Principais
 
-*Demais instruções para rodar e configurar continuam válidas conforme o README original.*
+Base URL:
 
-## URLs principais da API
+http://127.0.0.1:8000/api/catalogo/
 
-- Listagem de Plantas: [http://127.0.0.1:8000/api/catalogo/plantas/](http://127.0.0.1:8000/api/catalogo/plantas/)
-- Listagem de Usos Medicinais: [http://127.0.0.1:8000/api/catalogo/usos/](http://127.0.0.1:8000/api/catalogo/usos/)
-- Listagem de Regiões: [http://127.0.0.1:8000/api/catalogo/regioes/](http://127.0.0.1:8000/api/catalogo/regioes/)
-- Fontes Científicas: http://127.0.0.1:8000/api/catalogo/fontes-cientificas/
-- Django Admin: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
-- Dashboard: http://127.0.0.1:8000/api/catalogo/plantas/id/dashboard/
+🌿 Plantas
+Método	Endpoint	Descrição
+GET	/plantas/	Lista todas as plantas
+POST	/plantas/	Cadastra planta
+GET	/plantas/{id}/	Detalhe
+PUT/PATCH	/plantas/{id}/	Atualizar
+DELETE	/plantas/{id}/	Remover
+GET	/plantas/{id}/dashboard/	Painel completo com usos, regiões e fontes
+💊 Usos Medicinais
+/usos/
 
+🗺 Regiões e Biomas
+/regioes/
 
-# Filtros e Ordenação da API - Catálogo de Plantas Medicianais 
+📚 Fontes Científicas
+/fontes-cientificas/
 
+🔍 Sistema de Filtros
+🌿 Planta – filtros disponíveis:
+Por nome científico:
+/plantas/?nome_cientifico=Hancornia speciosa
 
-# 1. Plantas 🌱
+Por nome popular:
+/plantas/?nome_popular=Mangaba
 
-- Filtrar por nome científico	nome_cientifico	http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa
-- Filtrar por nome popular	nome_popular	http://127.0.0.1:8000/api/catalogo/plantas/?nome_popular=Mangaba
-- Filtrar por risco de extinção	risco_extincao	http://127.0.0.1:8000/api/catalogo/plantas/?risco_extincao=true
-- Filtrar por bioma da região	regioes__tipo_bioma	http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado
+Por risco de extinção:
+/plantas/?risco_extincao=True
 
+Por bioma:
+/plantas/?regioes__tipo_bioma=Cerrado
 
-# Ordenação ↕
+📌 Ordenação (ordering)
+Ordenar por nome científico:
+/plantas/?ordering=nome_cientifico
 
-- Ordenar por nome científico (A–Z)	ordering=nome_cientifico	http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_cientifico
-- Ordenar por nome popular (A–Z)	ordering=nome_popular	http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_popular
-- Ordenar por data de registro (mais recente primeiro)	ordering=-data_registro	http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro
-- Ordenar por data de registro (mais antigo primeiro)	ordering=data_registro	http://127.0.0.1:8000/api/catalogo/plantas/?ordering=data_registro
+Ordenar por nome popular:
+/plantas/?ordering=nome_popular
 
+Ordenar por data de registro (mais recentes primeiro):
+/plantas/?ordering=-data_registro
 
-# 2. Usos Medicianais 🌿
+🔎 Busca (SearchFilter)
 
-- Filtrar por parte utilizada	parte_utilizada	http://127.0.0.1:8000/api/catalogo/usos-medicinais/?parte_utilizada=Folha
-- Filtrar por indicação	indicacao	http://127.0.0.1:8000/api/catalogo/usos-medicinais/?indicacao=Diabetes
+Busca textual em plantas:
 
+/plantas/?search=manga
 
-# Ordenação ↕
 
-- Ordenar por parte utilizada	ordering=parte_utilizada	http://127.0.0.1:8000/api/catalogo/usos-medicinais/?ordering=parte_utilizada
+Campos incluídos na busca:
 
+nome_cientifico
 
-# 3. Regiões 📍
+nome_popular
 
-- Filtrar por nome da região	nome	http://127.0.0.1:8000/api/catalogo/regioes/?nome=Goiás
-- Filtrar por bioma	tipo_bioma	http://127.0.0.1:8000/api/catalogo/regioes/?tipo_bioma=Cerrado
+descricao
 
+📊 Endpoint Especial: Dashboard Completo
 
-# Ordenação ↕
+Mostra tudo de uma planta, já organizado.
 
-- Ordenar por nome	ordering=nome	http://127.0.0.1:8000/api/catalogo/regioes/?ordering=nome
-- Ordenar por bioma	ordering=tipo_bioma	http://127.0.0.1:8000/api/catalogo/regioes/?ordering=tipo_bioma
+Exemplo:
 
+/plantas/1/dashboard/
 
-# 4. Fontes Científicas 📚
 
-- Filtrar por ano	ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ano=2020
-- Filtrar por fonte	fonte	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?fonte=Reflora
+Retorna:
 
+dados da planta
 
-# Ordenação ↕
+imagem
 
-- Ordenar por ano	ordering=ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=ano
-- Ordenar por ano (do mais recente para o mais antigo)	ordering=-ano	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=-ano
-- Ordenar por título	ordering=titulo	http://127.0.0.1:8000/api/catalogo/fontes-cientificas/?ordering=titulo
+usos medicinais
 
+regiões
 
-# 5. Dashboard Geral 📊
+fontes científicas
 
-http://127.0.0.1:8000/api/catalogo/dashboard-geral/
+📘 Documentação Automática
 
+Disponível graças ao drf-spectacular:
 
-- Totais
+Swagger UI
 
-- Resumo
+👉 http://127.0.0.1:8000/api/docs/swagger/
 
-- Plantas recentes
+Redoc
 
-- Estatísticas gerais
+👉 http://127.0.0.1:8000/api/docs/redoc/
+
+Schema JSON
+
+👉 http://127.0.0.1:8000/api/schema/
+
+🖼 Upload de Imagens
+
+Faça upload via POST no endpoint de plantas:
+
+Content-Type: multipart/form-data
+
+
+Exemplo de campo:
+
+imagem: arquivo.jpg
+
+
+As imagens são armazenadas em:
+
+/media/plantas/
+
+🧪 Acesso ao Admin
+
+👉 http://127.0.0.1:8000/admin/
+
+🎯 Objetivo do Projeto
+
+Este projeto visa integrar conhecimentos de:
+
+Modelagem de dados
+
+Criação de APIs REST
+
+Serialização
+
+Filtros e busca
+
+Documentação automática
+
+Django Admin avançado
+
+Com foco no tema:
+
+🌱 "Catalogação de Plantas Medicinais Brasileiras"
+
+📄 Licença
+
+Este projeto é acadêmico e livre para estudo.
