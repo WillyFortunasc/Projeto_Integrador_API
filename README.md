@@ -71,11 +71,11 @@ cd Projeto_Integrador_API
 
 7. A API estará disponível em:
 
-👉 ``` http://127.0.0.1:8000/api/catalogo/  ```
+``` http://127.0.0.1:8000/api/catalogo/  ```
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
-🌿 Planta
+### Planta 🌿
 
 Campos:
 
