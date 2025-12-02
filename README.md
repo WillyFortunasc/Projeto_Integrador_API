@@ -54,6 +54,7 @@ cd Projeto_Integrador_API
 2. Instalar dependências com Poetry
 
 ``` python
+
 poetry install 
 
 ```
@@ -61,6 +62,7 @@ poetry install
 3. Ativar o ambiente virtual
 
 ``` python
+
 poetry shell
 
 ```
@@ -68,6 +70,7 @@ poetry shell
 4. Aplicar migrações
 
 ``` python
+
 poetry run python manage.py migrate 
 
 ```
@@ -75,6 +78,7 @@ poetry run python manage.py migrate
 5. Criar superusuário (opcional, mas recomendado)
 
 ``` python
+
 poetry run python manage.py createsuperuser 
 
 ```
@@ -82,16 +86,14 @@ poetry run python manage.py createsuperuser
 6. Rodar servidor
 
 ``` python
+
 poetry run python manage.py runserver 
 
 ```
 
 7. A API estará disponível em:
 
-``` python
-http://127.0.0.1:8000/api/catalogo/  
-
-```
+``` http://127.0.0.1:8000/api/catalogo/ ```
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
@@ -176,18 +178,15 @@ http://127.0.0.1:8000/api/catalogo/
 
 • Usos Medicinais 💊
 
-``` http://127.0.0.1:8000/api/catalogo/usos/ 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/usos/ ``` 
 
 • Regiões e Biomas 🗺
 
-``` http://127.0.0.1:8000/api/catalogo/regioes/ 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/regioes/ ``` 
 
 • Fontes Científicas 📚
 
-``` http://127.0.0.1:8000/api/catalogo/fontes-cientificas/ 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/fontes-cientificas/ ``` 
 
 
 # Sistema de Filtros 🔍 
@@ -196,48 +195,40 @@ http://127.0.0.1:8000/api/catalogo/
 
 • Por nome científico:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia speciosa ``` 
 
 • Por nome popular:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_popular=Mangaba 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?nome_popular=Mangaba ``` 
 
 • Por risco de extinção:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?risco_extincao=True 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?risco_extincao=True ``` 
 
 • Por bioma:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado ``` 
 
 
 # Ordenação (ordering) 📌
 
 • Ordenar por nome científico:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_cientifico
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_cientifico ``` 
 
 • Ordenar por nome popular:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_popular
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=nome_popular ``` 
 
 • Ordenar por data de registro (mais recentes primeiro):
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro 
-``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro ``` 
 
 # Busca (SearchFilter) 🔎
 
 Busca textual em plantas:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/?search=mangaba
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/?search=mangaba ``` 
 
 
 Campos incluídos na busca:
@@ -254,8 +245,7 @@ Mostra tudo de uma planta, já organizado.
 
 Exemplo:
 
-``` http://127.0.0.1:8000/api/catalogo/plantas/1/dashboard/
- ``` 
+``` http://127.0.0.1:8000/api/catalogo/plantas/1/dashboard/ ``` 
 
 
 Retorna:
@@ -276,44 +266,43 @@ Disponível graças ao drf-spectacular:
 
 Swagger UI
 
-``` http://127.0.0.1:8000/api/docs/swagger/
-``` 
+``` http://127.0.0.1:8000/api/docs/swagger/ ``` 
 
 Redoc
 
-``` http://127.0.0.1:8000/api/docs/redoc/
- ``` 
+``` http://127.0.0.1:8000/api/docs/redoc/ ``` 
 
 Schema JSON
 
-``` http://127.0.0.1:8000/api/schema/
- ``` 
+``` http://127.0.0.1:8000/api/schema/ ``` 
 
 # Upload de Imagens 🖼
 
 Faça upload via POST no endpoint de plantas:
 
-``` Content-Type: multipart/form-data 
+``` python
+
+Content-Type: multipart/form-data 
+
 ```
 
 Exemplo de campo:
 
 ``` python
+
 imagem: arquivo.jpg
+
 ```
 
 
 As imagens são armazenadas em:
 
-``` python
-http://127.0.0.1:8000/media/plantas/ 
-``` 
+``` http://127.0.0.1:8000/media/plantas/ ``` 
 
 # Acesso ao Admin 🧪
 
 
-``` http://127.0.0.1:8000/admin/ 
-```
+``` http://127.0.0.1:8000/admin/ ```
 
 # Objetivo do Projeto 🎯
 
