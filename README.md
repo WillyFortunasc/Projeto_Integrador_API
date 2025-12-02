@@ -5,15 +5,15 @@ Este projeto foi criado como Projeto Integrador, baseado na estrutura do profess
 
 A API oferece:
 
-Cadastro de plantas, incluindo imagem
+• Cadastro de plantas, incluindo imagem
 
-Cadastro de usos medicinais
+• Cadastro de usos medicinais
 
-Cadastro de regiões e biomas onde ocorrem
+• Cadastro de regiões e biomas onde ocorrem
 
-Cadastro de fontes científicas (artigos, livros, instituições etc.)
+• Cadastro de fontes científicas (artigos, livros, instituições etc.)
 
-Sistema de filtros, buscas e ordenação
+• Sistema de filtros, buscas e ordenação
 
 Documentação automática (Swagger + Redoc)
 
