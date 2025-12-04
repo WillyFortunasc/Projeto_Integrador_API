@@ -1,6 +1,10 @@
+from rest_framework.permissions import IsAuthenticated
+from .permissions import AdminOrPesquisadorCanEdit
 from rest_framework import viewsets
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, BasePermission
+from django.db.models import Count
 
 from .models import Planta, UsoMedicinal, Regiao, FonteCientifica
 from .serializers import (
@@ -10,12 +14,37 @@ from .serializers import (
     FonteCientificaSerializer
 )
 
+# ============================
+# PERMISSÕES PERSONALIZADAS
+# ============================
 
+class IsAdminOnly(BasePermission):
+    def has_permission(self, request, view):
+        return (
+            request.user.is_authenticated and
+            request.user.groups.filter(name='Administrador').exists()
+        )
+
+class IsPesquisadorOnly(BasePermission):
+    def has_permission(self, request, view):
+        return (
+            request.user.is_authenticated and
+            request.user.groups.filter(name='Pesquisador').exists()
+        )
+
+class IsUsuarioReadOnly(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated
+
+
+# ============================
 # PLANTA
+# ============================
 
 class PlantaViewSet(viewsets.ModelViewSet):
     queryset = Planta.objects.all()
     serializer_class = PlantaSerializer
+    permission_classes = [IsAuthenticated, AdminOrPesquisadorCanEdit]
     
     filterset_fields = [
         'nome_cientifico',
@@ -23,21 +52,26 @@ class PlantaViewSet(viewsets.ModelViewSet):
         'risco_extincao',
         'regioes__tipo_bioma',
     ]
-    
-    ordering_fields = [
-    'nome_cientifico',
-    'nome_popular',
-    'data_registro'
-]
-    
-    search_fields = [
-    'nome_cientifico',
-    'nome_popular',
-    'descricao',
-    'regioes__tipo_bioma',
-]
 
-      
+    ordering_fields = [
+        'nome_cientifico',
+        'nome_popular',
+        'data_registro'
+    ]
+
+    search_fields = [
+        'nome_cientifico',
+        'nome_popular',
+        'descricao',
+        'regioes__tipo_bioma',
+    ]
+
+    # ✅ PERMISSÕES
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsAdminOnly()]
+        return [IsAuthenticated()]
+
     @action(detail=True, methods=['get'], url_path='dashboard')
     def dashboard(self, request, pk=None):
         planta = self.get_object()
@@ -86,57 +120,72 @@ class PlantaViewSet(viewsets.ModelViewSet):
         })
 
 
+# ============================
 # USO MEDICINAL
+# ============================
 
 class UsoMedicinalViewSet(viewsets.ModelViewSet):
     queryset = UsoMedicinal.objects.all()
     serializer_class = UsoMedicinalSerializer
+    permission_classes = [IsAuthenticated, AdminOrPesquisadorCanEdit]
+
     filterset_fields = ['parte_utilizada', 'indicacao']
     ordering_fields = ['parte_utilizada']
-    search_fields = [
-    'parte_utilizada',
-    'indicacao',
-    'modo_preparo',
-]
+    search_fields = ['parte_utilizada', 'indicacao', 'modo_preparo']
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsPesquisadorOnly()]
+        return [IsAuthenticated()]
 
 
+# ============================
 # REGIÃO
+# ============================
 
 class RegiaoViewSet(viewsets.ModelViewSet):
     queryset = Regiao.objects.all()
     serializer_class = RegiaoSerializer
+    permission_classes = [IsAuthenticated, AdminOrPesquisadorCanEdit]
+
     filterset_fields = ['nome', 'tipo_bioma']
     ordering_fields = ['nome', 'tipo_bioma']
-    search_fields = [
-    'nome',
-    'tipo_bioma',
-    'descricao'
-]
+    search_fields = ['nome', 'tipo_bioma', 'descricao']
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsAdminOnly()]
+        return [IsAuthenticated()]
 
 
+# ============================
 # FONTE CIENTÍFICA
+# ============================
 
 class FonteCientificaViewSet(viewsets.ModelViewSet):
     queryset = FonteCientifica.objects.all()
     serializer_class = FonteCientificaSerializer
+    permission_classes = [IsAuthenticated, AdminOrPesquisadorCanEdit]
+
     filterset_fields = ['ano', 'fonte']
     ordering_fields = ['ano', 'titulo']
-    search_fields = [
-    'titulo',
-    'autores',
-    'fonte',
-    'observacoes'
-]
+    search_fields = ['titulo', 'autores', 'fonte', 'observacoes']
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsPesquisadorOnly()]
+        return [IsAuthenticated()]
 
 
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from django.db.models import Count
-from .models import Planta, UsoMedicinal, Regiao, FonteCientifica
-
+# ============================
+# DASHBOARD GERAL (LOGIN OBRIGATÓRIO)
+# ============================
 
 @api_view(['GET'])
 def dashboard_geral(request):
+    if not request.user.is_authenticated:
+        return Response({"detail": "Autenticação necessária."}, status=401)
+
     total_plantas = Planta.objects.count()
     total_extincao = Planta.objects.filter(risco_extincao=True).count()
     total_usos = UsoMedicinal.objects.count()
