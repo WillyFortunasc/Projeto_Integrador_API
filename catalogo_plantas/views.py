@@ -1,9 +1,7 @@
-from rest_framework.permissions import IsAuthenticated
-from .permissions import AdminOrPesquisadorCanEdit
 from rest_framework import viewsets
 from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, BasePermission
+from rest_framework.permissions import IsAuthenticated
 from django.db.models import Count
 
 from .models import Planta, UsoMedicinal, Regiao, FonteCientifica
@@ -13,29 +11,11 @@ from .serializers import (
     RegiaoSerializer,
     FonteCientificaSerializer
 )
-
-# ============================
-# PERMISSÕES PERSONALIZADAS
-# ============================
-
-class IsAdminOnly(BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated and
-            request.user.groups.filter(name='Administrador').exists()
-        )
-
-class IsPesquisadorOnly(BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated and
-            request.user.groups.filter(name='Pesquisador').exists()
-        )
-
-class IsUsuarioReadOnly(BasePermission):
-    def has_permission(self, request, view):
-        return request.user.is_authenticated
-
+from .permissions import (
+    IsAdminOnly,
+    IsPesquisadorOnly,
+    AdminOrPesquisadorCanEdit
+)
 
 # ============================
 # PLANTA
@@ -45,7 +25,7 @@ class PlantaViewSet(viewsets.ModelViewSet):
     queryset = Planta.objects.all()
     serializer_class = PlantaSerializer
     permission_classes = [IsAuthenticated, AdminOrPesquisadorCanEdit]
-    
+
     filterset_fields = [
         'nome_cientifico',
         'nome_popular',
@@ -66,7 +46,6 @@ class PlantaViewSet(viewsets.ModelViewSet):
         'regioes__tipo_bioma',
     ]
 
-    # ✅ PERMISSÕES
     def get_permissions(self):
         if self.action in ['create', 'update', 'partial_update', 'destroy']:
             return [IsAdminOnly()]

@@ -322,6 +322,61 @@ Este projeto visa integrar conhecimentos de:
 
 • Com foco no tema: "Catalogação de Plantas Medicinais Brasileiras"
 
+# Autenticação (JWT) 🔐
+
+A API utiliza JSON Web Tokens (JWT) para autenticação.
+
+### Endpoints de autenticação
+
+- Obter token (login)
+
+``` POST /api/token/ ```
+
+- Renovar token
+
+``` POST /api/token/refresh/ ```
+
+Exemplo de login (POST /api/token/)
+
+``` python
+{
+  "username": "seu_usuario",
+  "password": "sua_senha"
+} 
+```
+
+Resposta:
+
+``` python 
+
+{
+  "refresh": "<refresh_token>",
+  "access": "<access_token>"
+}
+```
+
+- Usar o token no Swagger
+
+Clique em Authorize → cole:
+
+``` Bearer <ACCESS_TOKEN> ```
+
+- Usar em requisições da API
+
+``` Authorization: Bearer <ACCESS_TOKEN> ```
+
+- Perfis e Permissões (Grupos) 🛡
+
+Os grupos devem ser criados no painel ``` admin (/admin/): ```
+
+# Grupos utilizados:
+
+- Admin → acesso total
+
+- Pesquisador → cria e edita usos e fontes
+
+- Usuario → somente leitura
+
 # Licença 📄
 
 • Este projeto é acadêmico e livre para estudo.
