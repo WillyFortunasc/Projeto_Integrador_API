@@ -371,11 +371,11 @@ Os grupos devem ser criados no painel ``` admin (/admin/): ```
 
 # Grupos utilizados:
 
-- Admin → acesso total
+- Admin: acesso total
 
-- Pesquisador → cria e edita usos e fontes
+- Pesquisador: cria e edita usos e fontes
 
-- Usuario → somente leitura
+- Usuario: somente leitura
 
 # Licença 📄
 
