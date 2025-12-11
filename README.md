@@ -328,6 +328,10 @@ A API utiliza JSON Web Tokens (JWT) para autenticação.
 
 ### Endpoints de autenticação
 
+- Confirmar o token
+
+``` http://127.0.0.1:8000/api/token/ ```
+
 - Obter token (login)
 
 ``` POST /api/token/ ```
