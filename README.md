@@ -112,26 +112,34 @@ Projeto_Integrador_API/
 
 | Diretório / Arquivo | Descrição |
 |---------------------|----------|
+| `Projeto_Integrador_API/` | Diretório raiz do projeto, contendo todos os arquivos e aplicações da API. |
+| `manage.py` | Script principal do Django para execução de comandos administrativos (runserver, migrate, createsuperuser, etc.). |
+| `pyproject.toml` | Arquivo de configuração do Poetry, com definição das dependências e metadados do projeto. |
+| `poetry.lock` | Arquivo gerado pelo Poetry com o controle exato das versões das dependências instaladas. |
+| `db.sqlite3` | Banco de dados SQLite utilizado no ambiente de desenvolvimento. |
+| `README.md` | Documento de apresentação e documentação geral do projeto. |
 | `api_projetos/` | Diretório principal de configuração do projeto Django. |
-| `settings.py` | Configurações globais do projeto (apps, banco de dados, JWT, permissões, Swagger, mídia). |
-| `urls.py` | Rotas principais do projeto, incluindo autenticação JWT, documentação e inclusão das apps. |
-| `asgi.py` / `wsgi.py` | Arquivos de execução da aplicação para servidores ASGI/WSGI. |
-| `api/` | Aplicação base utilizada como referência estrutural do projeto integrador. |
-| `catalogo_plantas/` | Aplicação principal responsável pelo domínio de plantas medicinais. |
-| `models.py` | Definição dos modelos do banco de dados e seus relacionamentos. |
-| `serializers.py` | Serialização e validação dos dados expostos pela API. |
-| `views.py` | Implementação dos ViewSets, filtros, buscas, ordenação e dashboards. |
-| `permissions.py` | Permissões personalizadas baseadas em grupos (Admin, Pesquisador e Usuario). |
-| `urls.py` | Definição das rotas específicas da aplicação. |
-| `admin.py` | Configuração do Django Admin para gerenciamento dos dados. |
-| `migrations/` | Histórico de migrações do banco de dados. |
-| `media/` | Diretório para armazenamento de arquivos enviados (imagens). |
-| `media/plantas/` | Armazena as imagens das plantas cadastradas. |
-| `static/` | Arquivos estáticos do projeto (CSS, JS). |
-| `manage.py` | Script principal para execução de comandos Django. |
-| `pyproject.toml` | Configuração do Poetry e dependências do projeto. |
-| `poetry.lock` | Controle de versões exatas das dependências. |
-| `db.sqlite3` | Banco de dados SQLite utilizado em ambiente de desenvolvimento. |
+| `api_projetos/settings.py` | Configurações globais do projeto (apps instaladas, banco de dados, autenticação JWT, permissões, Swagger, mídia e estáticos). |
+| `api_projetos/urls.py` | Definição das rotas principais do projeto, incluindo autenticação, documentação e inclusão das aplicações. |
+| `api_projetos/asgi.py` | Arquivo de configuração para servidores ASGI. |
+| `api_projetos/wsgi.py` | Arquivo de configuração para servidores WSGI. |
+| `api/` | Aplicação base do projeto, utilizada como referência estrutural e apoio ao Projeto Integrador. |
+| `api/models.py` | Modelos auxiliares (caso existam) utilizados pela aplicação base. |
+| `api/serializers.py` | Serializadores associados aos modelos da aplicação base. |
+| `api/views.py` | Views e ViewSets da aplicação base. |
+| `api/urls.py` | Rotas específicas da aplicação base. |
+| `catalogo_plantas/` | Aplicação principal do projeto, responsável pelo domínio de plantas medicinais. |
+| `catalogo_plantas/models.py` | Definição dos modelos principais: Planta, UsoMedicinal, Região e FonteCientifica. |
+| `catalogo_plantas/serializers.py` | Serialização e validação dos dados expostos pela API. |
+| `catalogo_plantas/views.py` | Implementação dos ViewSets, filtros, buscas, ordenação e endpoint de dashboard. |
+| `catalogo_plantas/permissions.py` | Permissões personalizadas baseadas em grupos de usuários (Admin, Pesquisador e Usuario). |
+| `catalogo_plantas/urls.py` | Definição das rotas específicas da aplicação de catálogo de plantas. |
+| `catalogo_plantas/admin.py` | Configuração do Django Admin para gerenciamento das entidades do catálogo. |
+| `migrations/` | Histórico de migrações do banco de dados geradas pelo Django. |
+| `media/` | Diretório destinado ao armazenamento de arquivos enviados pela API. |
+| `media/plantas/` | Subdiretório onde são armazenadas as imagens das plantas cadastradas. |
+| `static/` | Diretório reservado para arquivos estáticos do projeto (CSS, JavaScript, etc.). |
+| `.venv/` | Ambiente virtual gerenciado pelo Poetry. |
 
 
 # Instalação e Execução 🚀
