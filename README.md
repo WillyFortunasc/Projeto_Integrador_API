@@ -21,8 +21,6 @@ A API oferece:
 
 • Endpoint especial dashboard com visão completa da planta
 
----
-
 # Tecnologias Utilizadas 📦
 
 • Python 3.12+  
@@ -34,8 +32,6 @@ A API oferece:
 • drf-spectacular (API Schema / Swagger)  
 • django-filter (filtros avançados)  
 • SimpleJWT (autenticação JWT)  
-
----
 
 # Instalação e Execução 🚀
 
