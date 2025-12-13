@@ -21,23 +21,21 @@ A API oferece:
 
 • Endpoint especial dashboard com visão completa da planta
 
+---
+
 # Tecnologias Utilizadas 📦
 
-• Python 3.12+
+• Python 3.12+  
+• Django 5.2.8  
+• Django REST Framework 3.16  
+• Poetry (gerenciador de pacotes)  
+• SQLite (padrão para desenvolvimento)  
+• Pillow (upload de imagens)  
+• drf-spectacular (API Schema / Swagger)  
+• django-filter (filtros avançados)  
+• SimpleJWT (autenticação JWT)  
 
-• Django 5.2.8
-
-• Django REST Framework 3.16
-
-• Poetry (gerenciador de pacotes)
-
-• SQLite (padrão para desenvolvimento)
-
-• Pillow (upload de imagens)
-
-• drf-spectacular (API Schema / Swagger)
-
-• django-filter (filtros avançados)
+---
 
 # Instalação e Execução 🚀
 
