@@ -1,37 +1,138 @@
 # Catálogo de Plantas Medicinais — API REST (Django + DRF) 🌿
 
+[![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg?logo=python)](https://www.python.org/downloads/)
+[![Django](https://img.shields.io/badge/Django-5.2-green.svg?logo=django)](https://www.djangoproject.com/)
+[![Django REST](https://img.shields.io/badge/DRF-3.16-red.svg?logo=django)](https://www.django-rest-framework.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57.svg?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![JWT](https://img.shields.io/badge/Auth-JWT-orange.svg)](https://jwt.io/)
+[![License](https://img.shields.io/badge/License-Acadêmico-yellow.svg)](#)
+
 ![WhatsApp Image 2025-12-02 at 10 40 59](https://github.com/user-attachments/assets/0a6157c6-a350-4448-af59-b1092a489f36)
 
-API desenvolvida para catalogar espécies vegetais medicinais, seus usos tradicionais, regiões de ocorrência e referências científicas.
-Este projeto foi criado como Projeto Integrador, baseado na estrutura do professor, porém totalmente remodelado para o tema Plantas Medicinais do Cerrado e Outros Biomas Brasileiros.
+## Instituições de Fomento e Parceria
+[![Website IFB](https://img.shields.io/badge/Website-IFB-%23508C3C.svg?labelColor=%23C8102E)](https://www.ifb.edu.br/) 
+[![Website ihwbr](https://img.shields.io/badge/Website-ihwbr-%23DAA520.svg?labelColor=%232E2E2E)](https://hardware.org.br/)
 
-A API oferece:
+## Orientador (link para o perfil do orientador)
 
-• Cadastro de plantas, incluindo imagem
+[![LinkedIn Claudio Ulisse](https://img.shields.io/badge/LinkedIn-Claudio_Ulisse-%230077B5.svg?labelColor=%23FFFFFF&logo=linkedin)](https://www.linkedin.com/in/claudioulisse/)
+[![GitHub claulis](https://img.shields.io/badge/GitHub-claulis_(Claudio_Ulisse)-%23181717.svg?logo=github&logoColor=white)](https://github.com/claulis)
+[![Lattes Claudio Ulisse](https://img.shields.io/badge/Lattes-Claudio_Ulisse-green.svg?logo=cnpq&logoColor=white)](http://lattes.cnpq.br/4607303092740768)
 
-• Cadastro de usos medicinais
+---
 
-• Cadastro de regiões e biomas onde ocorrem
+# Visão Geral
 
-• Cadastro de fontes científicas (artigos, livros, instituições etc.)
+API REST desenvolvida em **Django + Django REST Framework** para catalogação de **plantas medicinais brasileiras**, seus **usos terapêuticos**, **regiões e biomas**, e **fontes científicas**.
 
-• Sistema de filtros, buscas e ordenação
+Este projeto foi desenvolvido como **Projeto Integrador**, seguindo a **estrutura base proposta pelo professor**, porém **totalmente remodelado** para o tema:
 
-• Documentação automática (Swagger + Redoc)
+> **Plantas Medicinais do Cerrado e Outros Biomas Brasileiros**
 
-• Endpoint especial dashboard com visão completa da planta
+A API é segura, documentada, organizada e utiliza boas práticas de desenvolvimento backend.
 
-# Tecnologias Utilizadas 📦
+---
+## Funcionalidades Principais
 
-• Python 3.12+  
-• Django 5.2.8  
-• Django REST Framework 3.16  
-• Poetry (gerenciador de pacotes)  
-• SQLite (padrão para desenvolvimento)  
-• Pillow (upload de imagens)  
-• drf-spectacular (API Schema / Swagger)  
-• django-filter (filtros avançados)  
-• SimpleJWT (autenticação JWT)  
+- Cadastro de plantas medicinais (com upload de imagem)
+- Cadastro de usos medicinais
+- Cadastro de regiões e biomas
+- Cadastro de fontes científicas
+- Relacionamentos entre entidades
+- Sistema de filtros, busca e ordenação
+- Autenticação via JWT
+- Controle de acesso por grupos
+- Documentação automática (Swagger e Redoc)
+- Endpoint especial de dashboard por planta
+
+---
+
+## Tecnologias Utilizadas 📦
+
+| Tecnologia | Versão | Descrição |
+|-----------|--------|----------|
+| Python | 3.12+ | Linguagem de programação utilizada no desenvolvimento da API. |
+| Django | 5.2.8 | Framework web responsável pela estrutura base do projeto. |
+| Django REST Framework | 3.16 | Framework para construção de APIs RESTful. |
+| Poetry | Latest | Gerenciador de dependências e ambientes virtuais do projeto. |
+| SQLite | Padrão | Banco de dados utilizado no ambiente de desenvolvimento. |
+| Pillow | Latest | Biblioteca para processamento e upload de imagens. |
+| drf-spectacular | Latest | Geração automática de documentação OpenAPI (Swagger e Redoc). |
+| django-filter | Latest | Implementação de filtros avançados nas consultas da API. |
+| SimpleJWT | Latest | Implementação de autenticação baseada em JSON Web Tokens (JWT). |
+
+---  
+
+## Estrutura do Projeto 📁
+
+```text
+Projeto_Integrador_API/
+├── manage.py
+├── pyproject.toml
+├── poetry.lock
+├── db.sqlite3
+├── README.md
+│
+├── api_projetos/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── api/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── migrations/
+│
+├── catalogo_plantas/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── permissions.py
+│   └── migrations/
+│
+├── media/
+│   └── plantas/
+│       └── *.jpg
+│
+├── static/
+└── .venv/
+
+--- 
+
+### Descrição dos Diretórios
+
+| Diretório / Arquivo | Descrição |
+|---------------------|----------|
+| `api_projetos/` | Diretório principal de configuração do projeto Django. |
+| `settings.py` | Configurações globais do projeto (apps, banco de dados, JWT, permissões, Swagger, mídia). |
+| `urls.py` | Rotas principais do projeto, incluindo autenticação JWT, documentação e inclusão das apps. |
+| `asgi.py` / `wsgi.py` | Arquivos de execução da aplicação para servidores ASGI/WSGI. |
+| `api/` | Aplicação base utilizada como referência estrutural do projeto integrador. |
+| `catalogo_plantas/` | Aplicação principal responsável pelo domínio de plantas medicinais. |
+| `models.py` | Definição dos modelos do banco de dados e seus relacionamentos. |
+| `serializers.py` | Serialização e validação dos dados expostos pela API. |
+| `views.py` | Implementação dos ViewSets, filtros, buscas, ordenação e dashboards. |
+| `permissions.py` | Permissões personalizadas baseadas em grupos (Admin, Pesquisador e Usuario). |
+| `urls.py` | Definição das rotas específicas da aplicação. |
+| `admin.py` | Configuração do Django Admin para gerenciamento dos dados. |
+| `migrations/` | Histórico de migrações do banco de dados. |
+| `media/` | Diretório para armazenamento de arquivos enviados (imagens). |
+| `media/plantas/` | Armazena as imagens das plantas cadastradas. |
+| `static/` | Arquivos estáticos do projeto (CSS, JS). |
+| `manage.py` | Script principal para execução de comandos Django. |
+| `pyproject.toml` | Configuração do Poetry e dependências do projeto. |
+| `poetry.lock` | Controle de versões exatas das dependências. |
+| `db.sqlite3` | Banco de dados SQLite utilizado em ambiente de desenvolvimento. |
+
 
 # Instalação e Execução 🚀
 
