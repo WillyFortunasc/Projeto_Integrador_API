@@ -107,39 +107,38 @@ Projeto_Integrador_API/
 └── .venv/
 
 --- 
-
 ### Descrição dos Diretórios
 
 | Diretório / Arquivo | Descrição |
 |---------------------|----------|
-| `Projeto_Integrador_API/` | Diretório raiz do projeto, contendo todos os arquivos e aplicações da API. |
-| `manage.py` | Script principal do Django para execução de comandos administrativos (runserver, migrate, createsuperuser, etc.). |
-| `pyproject.toml` | Arquivo de configuração do Poetry, com definição das dependências e metadados do projeto. |
-| `poetry.lock` | Arquivo gerado pelo Poetry com o controle exato das versões das dependências instaladas. |
+| `Projeto_Integrador_API/` | Diretório raiz do projeto, contendo toda a estrutura da API. |
+| `manage.py` | Script principal do Django para execução de comandos administrativos. |
+| `pyproject.toml` | Arquivo de configuração do Poetry com dependências e metadados do projeto. |
+| `poetry.lock` | Controle das versões exatas das dependências instaladas pelo Poetry. |
 | `db.sqlite3` | Banco de dados SQLite utilizado no ambiente de desenvolvimento. |
-| `README.md` | Documento de apresentação e documentação geral do projeto. |
-| `api_projetos/` | Diretório principal de configuração do projeto Django. |
-| `api_projetos/settings.py` | Configurações globais do projeto (apps instaladas, banco de dados, autenticação JWT, permissões, Swagger, mídia e estáticos). |
-| `api_projetos/urls.py` | Definição das rotas principais do projeto, incluindo autenticação, documentação e inclusão das aplicações. |
-| `api_projetos/asgi.py` | Arquivo de configuração para servidores ASGI. |
-| `api_projetos/wsgi.py` | Arquivo de configuração para servidores WSGI. |
-| `api/` | Aplicação base do projeto, utilizada como referência estrutural e apoio ao Projeto Integrador. |
-| `api/models.py` | Modelos auxiliares (caso existam) utilizados pela aplicação base. |
-| `api/serializers.py` | Serializadores associados aos modelos da aplicação base. |
+| `README.md` | Documentação principal do projeto. |
+| `api_projetos/` | Diretório de configuração central do projeto Django. |
+| `api_projetos/settings.py` | Configurações globais (apps, banco de dados, JWT, permissões, Swagger, mídia). |
+| `api_projetos/urls.py` | Rotas principais do projeto, incluindo apps, autenticação e documentação. |
+| `api_projetos/asgi.py` | Configuração para execução da aplicação em servidores ASGI. |
+| `api_projetos/wsgi.py` | Configuração para execução da aplicação em servidores WSGI. |
+| `api/` | Aplicação base utilizada como referência estrutural do Projeto Integrador. |
+| `api/models.py` | Modelos auxiliares da aplicação base (se aplicável). |
+| `api/serializers.py` | Serializadores da aplicação base. |
 | `api/views.py` | Views e ViewSets da aplicação base. |
 | `api/urls.py` | Rotas específicas da aplicação base. |
-| `catalogo_plantas/` | Aplicação principal do projeto, responsável pelo domínio de plantas medicinais. |
-| `catalogo_plantas/models.py` | Definição dos modelos principais: Planta, UsoMedicinal, Região e FonteCientifica. |
-| `catalogo_plantas/serializers.py` | Serialização e validação dos dados expostos pela API. |
-| `catalogo_plantas/views.py` | Implementação dos ViewSets, filtros, buscas, ordenação e endpoint de dashboard. |
-| `catalogo_plantas/permissions.py` | Permissões personalizadas baseadas em grupos de usuários (Admin, Pesquisador e Usuario). |
-| `catalogo_plantas/urls.py` | Definição das rotas específicas da aplicação de catálogo de plantas. |
-| `catalogo_plantas/admin.py` | Configuração do Django Admin para gerenciamento das entidades do catálogo. |
-| `migrations/` | Histórico de migrações do banco de dados geradas pelo Django. |
-| `media/` | Diretório destinado ao armazenamento de arquivos enviados pela API. |
-| `media/plantas/` | Subdiretório onde são armazenadas as imagens das plantas cadastradas. |
-| `static/` | Diretório reservado para arquivos estáticos do projeto (CSS, JavaScript, etc.). |
-| `.venv/` | Ambiente virtual gerenciado pelo Poetry. |
+| `catalogo_plantas/` | Aplicação principal responsável pelo domínio de plantas medicinais. |
+| `catalogo_plantas/models.py` | Definição dos modelos principais do sistema. |
+| `catalogo_plantas/serializers.py` | Serialização e validação dos dados da API. |
+| `catalogo_plantas/views.py` | ViewSets, filtros, buscas, ordenação e endpoint de dashboard. |
+| `catalogo_plantas/permissions.py` | Permissões personalizadas baseadas em grupos de usuários. |
+| `catalogo_plantas/urls.py` | Rotas específicas da aplicação de catálogo de plantas. |
+| `catalogo_plantas/admin.py` | Configuração do Django Admin para gerenciamento dos dados. |
+| `migrations/` | Histórico de migrações do banco de dados. |
+| `media/` | Diretório para armazenamento de arquivos enviados pela API. |
+| `media/plantas/` | Armazena as imagens das plantas cadastradas. |
+| `static/` | Diretório reservado para arquivos estáticos do projeto. |
+| `.venv/` | Ambiente virtual criado e gerenciado pelo Poetry. |
 
 
 # Instalação e Execução 🚀
