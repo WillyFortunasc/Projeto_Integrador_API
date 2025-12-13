@@ -105,9 +105,11 @@ Projeto_Integrador_API/
 │
 ├── static/
 └── .venv/
+```
 
---- 
-### Descrição dos Diretórios
+
+# Descrição dos Diretórios
+
 
 | Diretório / Arquivo | Descrição |
 |---------------------|----------|
