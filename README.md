@@ -19,7 +19,28 @@
 [![GitHub claulis](https://img.shields.io/badge/GitHub-claulis_(Claudio_Ulisse)-%23181717.svg?logo=github&logoColor=white)](https://github.com/claulis)
 [![Lattes Claudio Ulisse](https://img.shields.io/badge/Lattes-Claudio_Ulisse-green.svg?logo=cnpq&logoColor=white)](http://lattes.cnpq.br/4607303092740768)
 
----
+
+## Sumário
+
+- [Visão Geral](#visão-geral)
+- [Funcionalidades Principais](#funcionalidades-principais)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas-)
+- [Estrutura do Projeto](#estrutura-do-projeto-)
+- [Descrição dos Diretórios](#descrição-dos-diretórios)
+- [Instalação e Execução](#instalação-e-execução-)
+- [Estrutura do Banco de Dados (Modelos)](#estrutura-do-banco-de-dados-modelos-)
+- [Endpoints Principais](#endpoints-principais-)
+- [Sistema de Filtros](#sistema-de-filtros-)
+- [Ordenação (ordering)](#ordenação-ordering-)
+- [Busca (SearchFilter)](#busca-searchfilter-)
+- [Endpoint Especial: Dashboard Completo](#endpoint-especial-dashboard-completo-)
+- [Documentação Automática](#documentação-automática-)
+- [Upload de Imagens](#upload-de-imagens-)
+- [Acesso ao Admin](#acesso-ao-admin-)
+- [Objetivo do Projeto](#objetivo-do-projeto-)
+- [Autenticação (JWT)](#autenticação-jwt-)
+- [Perfis e Permissões (Grupos)](#perfis-e-permissões-grupos-)
+- [Licença](#licença-)
 
 # Visão Geral
 
