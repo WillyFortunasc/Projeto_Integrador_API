@@ -506,6 +506,96 @@ Os grupos devem ser criados no painel ``` admin (/admin/): ```
 
 - Usuario: somente leitura
 
+# Deploy no Render ☁️
+
+A API foi publicada em ambiente de produção utilizando a plataforma Render, permitindo o acesso público aos endpoints e à documentação automática.
+
+**URL da aplicação em produção**
+
+- API online 
+
+https://projeto-integrador-api-oficial.onrender.com/
+
+**Configuração do serviço**
+
+O serviço foi criado como Web Service com as seguintes configurações:
+
+- Runtime: Python
+
+- Build Command:
+
+```python
+pip install -r requirements.txt
+
+```
+
+
+- Start Command:
+
+``` python
+gunicorn api_projetos.wsgi:application
+
+```
+
+O módulo api_projetos corresponde ao diretório onde estão localizados os arquivos settings.py e wsgi.py.
+
+**Ajustes para produção**
+
+No arquivo settings.py, foram realizados os seguintes ajustes para execução em produção:
+
+```python
+
+DEBUG = False
+
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+
+```
+
+**Rota raiz da aplicação**
+
+Para evitar o retorno padrão Not Found e indicar que a API está ativa, foi criada uma rota raiz (/).
+Ao acessar a URL principal da aplicação, é retornado o seguinte JSON informativo:
+
+``` python
+{
+  "status": "API online",
+  "endpoints": {
+    "admin": "/admin/",
+    "token": "/api/token/",
+    "token refresh": "/api/token/refresh/",
+    "api base": "/api/",
+    "catalogo plantas": "/api/catalogo/",
+    "swagger": "/api/docs/swagger/",
+    "redoc": "/api/docs/redoc/"
+  }
+}
+
+```
+
+**Documentação em produção**
+
+A documentação automática da API está disponível em produção através do Swagger UI:
+
+``` python
+
+https://projeto-integrador-api-oficial.onrender.com/api/docs/swagger/
+
+```
+
+**Status do deploy**
+
+``` python
+
+API online e funcional
+
+Endpoints acessíveis em produção
+
+Documentação ativa
+
+Ambiente pronto para uso e avaliação acadêmica
+
+```
+
 # Licença 📄
 
 • Este projeto é acadêmico e livre para estudo.
