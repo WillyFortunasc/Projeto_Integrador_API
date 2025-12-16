@@ -37,7 +37,6 @@
 - [Busca (SearchFilter)](#busca-searchfilter-)
 - [Endpoint Especial: Dashboard Completo](#endpoint-especial-dashboard-completo-)
 - [Documentação Automática](#documentação-automática-)
-- [Imagens](#imagens-)
 - [Acesso ao Admin](#acesso-ao-admin-)
 - [Objetivo do Projeto](#objetivo-do-projeto-)
 - [Autenticação (JWT)](#autenticação-jwt-)
@@ -410,11 +409,6 @@ Schema JSON
 
 ``` http://127.0.0.1:8000/api/schema/ ``` 
 
----
-
-# Imagens 🖼
-
-``` http://127.0.0.1:8000/media/plantas/ ``` 
 
 ---
 
