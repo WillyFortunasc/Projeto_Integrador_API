@@ -37,7 +37,7 @@
 - [Busca (SearchFilter)](#busca-searchfilter-)
 - [Endpoint Especial: Dashboard Completo](#endpoint-especial-dashboard-completo-)
 - [Documentação Automática](#documentação-automática-)
-- [Upload de Imagens](#upload-de-imagens-)
+- [Imagens](#imagens-)
 - [Acesso ao Admin](#acesso-ao-admin-)
 - [Objetivo do Projeto](#objetivo-do-projeto-)
 - [Autenticação (JWT)](#autenticação-jwt-)
