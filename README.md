@@ -282,6 +282,7 @@ poetry run python manage.py runserver
 | link        | string |
 | observacoes| string |
 
+---
 
 # Endpoints Principais 🔌
 
@@ -313,6 +314,7 @@ poetry run python manage.py runserver
 
 ``` http://127.0.0.1:8000/api/catalogo/fontes-cientificas/ ``` 
 
+---
 
 # Sistema de Filtros 🔍 
 
@@ -335,6 +337,7 @@ poetry run python manage.py runserver
 ``` http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado ``` 
 
 ---
+
 # Ordenação (ordering) 📌
 
 • Ordenar por nome científico:
@@ -350,6 +353,7 @@ poetry run python manage.py runserver
 ``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro ``` 
 
 ---
+
 # Busca (SearchFilter) 🔎
 
 Busca textual em plantas:
@@ -366,6 +370,7 @@ Campos incluídos na busca:
 • descricao
 
 ---
+
 # Endpoint Especial: Dashboard Completo 📊 
 
 Mostra tudo de uma planta, já organizado.
@@ -442,6 +447,8 @@ Este projeto visa integrar conhecimentos de:
 # Autenticação (JWT) 🔐
 
 A API utiliza JSON Web Tokens (JWT) para autenticação.
+
+---
 
 ### Endpoints de autenticação
 
@@ -577,6 +584,7 @@ Os grupos devem ser criados no painel ``` admin (/admin/): ```
 | Can delete session | ✅ | ❌ | ❌ |
 | Can view session | ✅ | ❌ | ❌ |
 
+---
 
 # Deploy no Render ☁️
 
