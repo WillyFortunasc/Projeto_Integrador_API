@@ -39,7 +39,10 @@
 - [Objetivo do Projeto](#objetivo-do-projeto-)
 - [Autenticação (JWT)](#autenticação-jwt-)
 - [Perfis e Permissões (Grupos)](#perfis-e-permissões-grupos-)
+- [Controle de Acesso por Perfil](#controle-de-acesso-por-perfil-)
+- [Deploy no Render](#deploy-no-render-)
 - [Licença](#licença-)
+
 
 # Visão Geral
 
