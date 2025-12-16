@@ -654,20 +654,6 @@ A documentação automática da API está disponível em produção através do 
 https://projeto-integrador-api-oficial.onrender.com/api/docs/swagger/
 
 ```
-
-**Status do deploy**
-
-``` python
-
-API online e funcional
-
-Endpoints acessíveis em produção
-
-Documentação ativa
-
-Ambiente pronto para uso e avaliação acadêmica
-
-```
 ---
 
 # Licença 📄
