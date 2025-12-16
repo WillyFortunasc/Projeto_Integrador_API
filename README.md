@@ -505,6 +505,82 @@ Os grupos devem ser criados no painel ``` admin (/admin/): ```
 
 - Usuario: somente leitura
 
+## Controle de Acesso por Perfil 🔐
+
+| Recurso / Permissão | Admin | Pesquisador | Usuário |
+|--------------------|:-----:|:-----------:|:-------:|
+| **Administração – Log Entry** | | | |
+| Can add log entry | ✅ | ❌ | ❌ |
+| Can change log entry | ✅ | ❌ | ❌ |
+| Can delete log entry | ✅ | ❌ | ❌ |
+| Can view log entry | ✅ | ❌ | ❌ |
+| **API – Projeto** | | | |
+| Can add projeto | ✅ | ❌ | ❌ |
+| Can change projeto | ✅ | ❌ | ❌ |
+| Can delete projeto | ✅ | ❌ | ❌ |
+| Can view projeto | ✅ | ❌ | ❌ |
+| **API – Responsável** | | | |
+| Can add responsavel | ✅ | ❌ | ❌ |
+| Can change responsavel | ✅ | ❌ | ❌ |
+| Can delete responsavel | ✅ | ❌ | ❌ |
+| Can view responsavel | ✅ | ❌ | ❌ |
+| **API – Tarefa** | | | |
+| Can add tarefa | ✅ | ❌ | ❌ |
+| Can change tarefa | ✅ | ❌ | ❌ |
+| Can delete tarefa | ✅ | ❌ | ❌ |
+| Can view tarefa | ✅ | ❌ | ❌ |
+| **Autenticação – Grupo** | | | |
+| Can add group | ✅ | ❌ | ❌ |
+| Can change group | ✅ | ❌ | ❌ |
+| Can delete group | ✅ | ❌ | ❌ |
+| Can view group | ✅ | ❌ | ❌ |
+| **Autenticação – Permissão** | | | |
+| Can add permission | ✅ | ❌ | ❌ |
+| Can change permission | ✅ | ❌ | ❌ |
+| Can delete permission | ✅ | ❌ | ❌ |
+| Can view permission | ✅ | ❌ | ❌ |
+| **Autenticação – Usuário** | | | |
+| Can add user | ✅ | ❌ | ❌ |
+| Can change user | ✅ | ❌ | ❌ |
+| Can delete user | ✅ | ❌ | ❌ |
+| Can view user | ✅ | ❌ | ❌ |
+| **Token de Autenticação** | | | |
+| Can add token | ✅ | ❌ | ❌ |
+| Can change token | ✅ | ❌ | ❌ |
+| Can delete token | ✅ | ❌ | ❌ |
+| Can view token | ✅ | ❌ | ❌ |
+| **Catálogo – Fonte Científica** | | | |
+| Can add fonte cientifica | ✅ | ✅ | ❌ |
+| Can change fonte cientifica | ✅ | ✅ | ❌ |
+| Can delete fonte cientifica | ✅ | ❌ | ❌ |
+| Can view fonte cientifica | ✅ | ✅ | ✅ |
+| **Catálogo – Planta** | | | |
+| Can add planta | ✅ | ✅ | ❌ |
+| Can change planta | ✅ | ✅ | ❌ |
+| Can delete planta | ✅ | ❌ | ❌ |
+| Can view planta | ✅ | ✅ | ✅ |
+| **Catálogo – Região** | | | |
+| Can add regiao | ✅ | ✅ | ❌ |
+| Can change regiao | ✅ | ✅ | ❌ |
+| Can delete regiao | ✅ | ❌ | ❌ |
+| Can view regiao | ✅ | ✅ | ✅ |
+| **Catálogo – Uso Medicinal** | | | |
+| Can add uso medicinal | ✅ | ✅ | ❌ |
+| Can change uso medicinal | ✅ | ✅ | ❌ |
+| Can delete uso medicinal | ✅ | ❌ | ❌ |
+| Can view uso medicinal | ✅ | ✅ | ✅ |
+| **Tipos de Conteúdo** | | | |
+| Can add content type | ✅ | ❌ | ❌ |
+| Can change content type | ✅ | ❌ | ❌ |
+| Can delete content type | ✅ | ❌ | ❌ |
+| Can view content type | ✅ | ❌ | ❌ |
+| **Sessões** | | | |
+| Can add session | ✅ | ❌ | ❌ |
+| Can change session | ✅ | ❌ | ❌ |
+| Can delete session | ✅ | ❌ | ❌ |
+| Can view session | ✅ | ❌ | ❌ |
+
+
 # Deploy no Render ☁️
 
 A API foi publicada em ambiente de produção utilizando a plataforma Render, permitindo o acesso público aos endpoints e à documentação automática.
