@@ -396,31 +396,11 @@ Schema JSON
 
 ``` http://127.0.0.1:8000/api/schema/ ``` 
 
-# Upload de Imagens 🖼
-
-Faça upload via POST no endpoint de plantas:
-
-``` python
-
-Content-Type: multipart/form-data 
-
-```
-
-Exemplo de campo:
-
-``` python
-
-imagem: arquivo.jpg
-
-```
-
-
-As imagens são armazenadas em:
+# Imagens 🖼
 
 ``` http://127.0.0.1:8000/media/plantas/ ``` 
 
 # Acesso ao Admin 🧪
-
 
 ``` http://127.0.0.1:8000/admin/ ```
 
@@ -599,7 +579,6 @@ O serviço foi criado como Web Service com as seguintes configurações:
 pip install -r requirements.txt
 
 ```
-
 
 - Start Command:
 
