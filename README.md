@@ -7,10 +7,13 @@
 [![JWT](https://img.shields.io/badge/Auth-JWT-orange.svg)](https://jwt.io/)
 [![License](https://img.shields.io/badge/License-Acadêmico-yellow.svg)](#)
 
+---
 
 ## Instituições de Fomento e Parceria
 [![Website IFB](https://img.shields.io/badge/Website-IFB-%23508C3C.svg?labelColor=%23C8102E)](https://www.ifb.edu.br/) 
 [![Website ihwbr](https://img.shields.io/badge/Website-ihwbr-%23DAA520.svg?labelColor=%232E2E2E)](https://hardware.org.br/)
+
+---
 
 ## Orientador (link para o perfil do orientador)
 
@@ -18,7 +21,7 @@
 [![GitHub claulis](https://img.shields.io/badge/GitHub-claulis_(Claudio_Ulisse)-%23181717.svg?logo=github&logoColor=white)](https://github.com/claulis)
 [![Lattes Claudio Ulisse](https://img.shields.io/badge/Lattes-Claudio_Ulisse-green.svg?logo=cnpq&logoColor=white)](http://lattes.cnpq.br/4607303092740768)
 
-
+---
 ## Sumário
 
 - [Visão Geral](#visão-geral)
@@ -42,7 +45,7 @@
 - [Controle de Acesso por Perfil](#controle-de-acesso-por-perfil-)
 - [Deploy no Render](#deploy-no-render-)
 - [Licença](#licença-)
-
+---
 
 # Visão Geral
 
@@ -129,7 +132,7 @@ Projeto_Integrador_API/
 ├── static/
 └── .venv/
 ```
-
+---
 
 # Descrição dos Diretórios
 
@@ -165,6 +168,7 @@ Projeto_Integrador_API/
 | `static/` | Diretório reservado para arquivos estáticos do projeto. |
 | `.venv/` | Ambiente virtual criado e gerenciado pelo Poetry. |
 
+---
 
 # Instalação e Execução 🚀
 
@@ -222,6 +226,7 @@ poetry run python manage.py runserver
 
 ``` http://127.0.0.1:8000/api/catalogo/ ```
 
+---
 
 # Estrutura do Banco de Dados (Modelos) 🗂
 
@@ -329,7 +334,7 @@ poetry run python manage.py runserver
 
 ``` http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado ``` 
 
-
+---
 # Ordenação (ordering) 📌
 
 • Ordenar por nome científico:
@@ -344,6 +349,7 @@ poetry run python manage.py runserver
 
 ``` http://127.0.0.1:8000/api/catalogo/plantas/?ordering=-data_registro ``` 
 
+---
 # Busca (SearchFilter) 🔎
 
 Busca textual em plantas:
@@ -359,6 +365,7 @@ Campos incluídos na busca:
 
 • descricao
 
+---
 # Endpoint Especial: Dashboard Completo 📊 
 
 Mostra tudo de uma planta, já organizado.
@@ -380,6 +387,8 @@ Retorna:
 
 • fontes científicas
 
+---
+
 # Documentação Automática 📘 
 
 Disponível graças ao drf-spectacular:
@@ -396,13 +405,19 @@ Schema JSON
 
 ``` http://127.0.0.1:8000/api/schema/ ``` 
 
+---
+
 # Imagens 🖼
 
 ``` http://127.0.0.1:8000/media/plantas/ ``` 
 
+---
+
 # Acesso ao Admin 🧪
 
 ``` http://127.0.0.1:8000/admin/ ```
+
+---
 
 # Objetivo do Projeto 🎯
 
@@ -421,6 +436,8 @@ Este projeto visa integrar conhecimentos de:
 • Django Admin avançado
 
 • Com foco no tema: "Catalogação de Plantas Medicinais Brasileiras"
+
+---
 
 # Autenticação (JWT) 🔐
 
@@ -473,6 +490,8 @@ Clique em Authorize → cole:
 
 Os grupos devem ser criados no painel ``` admin (/admin/): ```
 
+---
+
 # Grupos utilizados:
 
 - Admin: acesso total
@@ -480,6 +499,8 @@ Os grupos devem ser criados no painel ``` admin (/admin/): ```
 - Pesquisador: cria e edita usos e fontes
 
 - Usuario: somente leitura
+
+---
 
 ## Controle de Acesso por Perfil 🔐
 
@@ -645,6 +666,7 @@ Documentação ativa
 Ambiente pronto para uso e avaliação acadêmica
 
 ```
+---
 
 # Licença 📄
 
