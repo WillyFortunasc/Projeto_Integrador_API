@@ -222,68 +222,61 @@ poetry run python manage.py runserver
 
 ``` http://127.0.0.1:8000/api/catalogo/ ```
 
+
 # Estrutura do Banco de Dados (Modelos) 🗂
 
-### Planta 🌿
+## Planta 🌿
 
-• nome_cientifico
+| Campo           | Tipo    |
+|-----------------|---------|
+| nome_cientifico | string  |
+| nome_popular    | string  |
+| descricao       | string  |
+| imagem          | string  |
+| risco_extincao  | string  |
+| data_registro   | string  |
 
-• nome_popular
+### Relações
 
-• descricao
-
-• imagem
-
-• risco_extincao
-
-• data_registro
-
-### ➔ Relações:
-
-• Many-to-Many com Região
-
-• One-to-Many com UsoMedicinal
-
-• One-to-Many com FonteCientifica
-
-### UsoMedicinal 💊 
+| Relacionamento | Tipo |
+|---------------|------|
+| regiao        | string |
+| uso_medicinal | string |
+| fonte_cientifica | string |
 
 
-• planta (FK)
+## UsoMedicinal 💊
 
-• parte_utilizada
-
-• modo_preparo
-
-• indicacao
-
-### Regiao 🗺
-
-
-• nome
-
-• descricao
-
-• tipo_bioma
-
-• plantas (Many-to-Many)
-
-### FonteCientifica 📚 
+| Campo           | Tipo   |
+|-----------------|--------|
+| planta          | string |
+| parte_utilizada | string |
+| modo_preparo   | string |
+| indicacao      | string |
 
 
-• planta (FK)
+## Regiao 🗺
 
-• titulo
+| Campo      | Tipo   |
+|------------|--------|
+| nome       | string |
+| descricao  | string |
+| tipo_bioma | string |
+| plantas    | string |
 
-• autores
 
-• ano
+## FonteCientifica 📚
 
-• fonte
+| Campo       | Tipo   |
+|-------------|--------|
+| planta      | string |
+| titulo      | string |
+| autores     | string |
+| ano         | string |
+| fonte       | string |
+| link        | string |
+| observacoes| string |
 
-• link
-
-• observacoes
 
 # Endpoints Principais 🔌
 
