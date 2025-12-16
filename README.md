@@ -7,7 +7,6 @@
 [![JWT](https://img.shields.io/badge/Auth-JWT-orange.svg)](https://jwt.io/)
 [![License](https://img.shields.io/badge/License-Acadêmico-yellow.svg)](#)
 
-![WhatsApp Image 2025-12-02 at 10 40 59](https://github.com/user-attachments/assets/0a6157c6-a350-4448-af59-b1092a489f36)
 
 ## Instituições de Fomento e Parceria
 [![Website IFB](https://img.shields.io/badge/Website-IFB-%23508C3C.svg?labelColor=%23C8102E)](https://www.ifb.edu.br/) 
