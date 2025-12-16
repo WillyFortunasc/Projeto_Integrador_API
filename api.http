@@ -1,0 +1,41 @@
+### 🔐 Obter token JWT
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username": "willy",
+  "password": "w375f204"
+}
+
+### 🌱 Listar todas as plantas
+GET http://127.0.0.1:8000/api/catalogo/plantas/
+Authorization: Bearer SEU_TOKEN_AQUI
+
+
+### 🌿 Plantas por bioma (Cerrado)
+GET http://127.0.0.1:8000/api/catalogo/plantas/?regioes__tipo_bioma=Cerrado
+Authorization: Bearer SEU_TOKEN_AQUI
+
+### 🔬 Plantas por nome científico
+GET http://127.0.0.1:8000/api/catalogo/plantas/?nome_cientifico=Hancornia%20speciosa%20Gomes
+Authorization: Bearer SEU_TOKEN_AQUI
+
+### 🏷️ Plantas por nome popular
+GET http://127.0.0.1:8000/api/catalogo/plantas/?nome_popular=Mangaba
+Authorization: Bearer SEU_TOKEN_AQUI
+
+### ⚠️ Plantas por risco de extinção
+GET http://127.0.0.1:8000/api/catalogo/plantas/?risco_extincao=true
+Authorization: Bearer SEU_TOKEN_AQUI
+
+### 💊 Listar usos medicinais
+GET http://127.0.0.1:8000/api/catalogo/usos-medicinais/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY1OTE3Njc2LCJpYXQiOjE3NjU5MTQwNzYsImp0aSI6ImVhNzEyODY3MTM1YjQ2NDhhY2IwZDVlMWU4OGI4N2FmIiwidXNlcl9pZCI6IjIifQ.v7e09XSj2qJ0rLIHxwxZ58ICnvrXNheAn2pf_ywS45Y
+
+### 🗺 Listar regiões e biomas
+GET http://127.0.0.1:8000/api/catalogo/regioes/
+Authorization: Bearer SEU_TOKEN_AQUI
+
+### 📚 Listar fontes científicas
+GET http://127.0.0.1:8000/api/catalogo/fontes-cientificas/
+Authorization: Bearer SEU_TOKEN_AQUI
